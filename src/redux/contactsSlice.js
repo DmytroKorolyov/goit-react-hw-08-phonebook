@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addContactThunk, deleteContactThunk, fetchContactsThunk } from './operation';
+import { logoutThunk } from './auth/operations';
 
 const initialState = {
   contacts: {
@@ -31,6 +32,10 @@ const contactSlice = createSlice({
       })
       .addCase(addContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items.push(payload);
+      })
+
+      .addCase(logoutThunk.fulfilled, state => {
+        return initialState
       })
      
            

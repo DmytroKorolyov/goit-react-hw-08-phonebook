@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import s from './Navbar.module.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from '../redux/auth/slice';
+import { logoutThunk } from '../redux/auth/operations';
 
 const Navbar = () => {
     const { email, name } = useSelector(selectUser)
     const isLoggedIn = useSelector(selectIsLoggedIn)
+    const dispatch = useDispatch()
     return (
         <div className={s.wrapper}>
             <Link className={s.homeLink} to={'/'}>Redux | Auth</Link>
@@ -20,6 +22,7 @@ const Navbar = () => {
                         <NavLink to='/login'>Login</NavLink>
                     </>
                 )}
+                {isLoggedIn && <button onClick={() => dispatch(logoutThunk())}>Exit</button>}
 
             </nav>
         </div>

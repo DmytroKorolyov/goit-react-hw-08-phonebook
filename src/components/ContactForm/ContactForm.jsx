@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 
 const ContactForm = ({onAddContact}) => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   // const dispatch = useDispatch();
 
   const handleChange = e => {
     const { name, value } = e.target;
     if (name === 'name') {
       setName(value);
-    } else if (name === 'phone') {
-      setPhone(value);
+    } else if (name === 'number') {
+      setNumber(value);
     }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     // dispatch(addContactThunk({ name, phone }));
-    onAddContact(name, phone);
+    onAddContact(name, number);
 
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -37,12 +37,12 @@ const ContactForm = ({onAddContact}) => {
         />
       </div>
       <div>
-        Phone
+        Number
         <input
           type="tel"
-          name="phone"
+          name="number"
           required
-          value={phone}
+          value={number}
           onChange={handleChange}
         />
       </div>

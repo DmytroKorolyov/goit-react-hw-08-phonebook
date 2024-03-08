@@ -23,10 +23,10 @@ const ContactsMain = () => {
     dispatch(filterContacts(value));
   };
 
-  const handleAddContact = (name, phone) => {
+  const handleAddContact = (name, number) => {
     const newContact = {
       name: name.trim(),
-      phone: phone.trim(),
+      number: number.trim(),
     };
     const isContactExist = contacts.some(contact => contact.name === name);
     if (isContactExist) {
