@@ -16,7 +16,6 @@ const Navbar = () => {
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/contacts'>Contacts</NavLink>
-                <NavLink to='/test'>Test</NavLink>
                 {!isLoggedIn && (
                     <>
                         <NavLink to='/register'>Register</NavLink>
