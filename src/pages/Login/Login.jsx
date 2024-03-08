@@ -13,7 +13,7 @@ const Login = () => {
             .unwrap()
             .then(data => {
                 toast.success(`Welcome back, ${data.user.name}`)
-            navigate('/contacts')
+           
             })
             .catch(err => { toast.error('Credentials is not valid') })
         
@@ -24,7 +24,7 @@ const Login = () => {
     }
     return (
         <div>
-            <Form formType='login' onDataSubmit={handleSubmit} values={ values} />
+            <Form formType='login' onDataSubmit={handleSubmit} values={{}} />
         </div>
     );
 }

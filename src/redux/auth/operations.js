@@ -42,3 +42,19 @@ export const logoutThunk = createAsyncThunk('logout', async (_, thunkApi) => {
     }
     
 })
+
+export const refreshThunk = createAsyncThunk('refresh', async (_, thunkApi) => {
+    const savedToken = thunkApi.getState().auth.token
+    if (!savedToken) {
+        return thunkApi.rejectWithValue('Token is not exist')
+    }
+
+    try {
+        setToken(savedToken)
+        const { data } = await contactsApi.get('/users/current')
+        console.log(data);
+        return data
+    } catch (error) {
+        return thunkApi.rejectWithValue(error.message)
+    }
+})
