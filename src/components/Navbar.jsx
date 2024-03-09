@@ -6,7 +6,7 @@ import { selectIsLoggedIn, selectUser } from '../redux/auth/slice';
 import { logoutThunk } from '../redux/auth/operations';
 
 const Navbar = () => {
-    const { email, name } = useSelector(selectUser)
+    const { email } = useSelector(selectUser)
     const isLoggedIn = useSelector(selectIsLoggedIn)
     const dispatch = useDispatch()
     return (
