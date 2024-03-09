@@ -20,10 +20,10 @@ const Login = () => {
             .catch(err => { toast.error('Credentials is not valid') })
         
     }
-    const values = {
-        email: 'StepanUA@mail.com.ua',
-        password: 'StepanUA@mail.com.ua',
-    }
+    // const values = {
+    //     email: 'StepanUA@mail.com.ua',
+    //     password: 'StepanUA@mail.com.ua',
+    // }
     return (
         <div>
             <Form formType='login' onDataSubmit={handleSubmit} values={{}} />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
+import s from './ContactForm.module.css'
 
 const ContactForm = ({onAddContact}) => {
   const [name, setName] = useState('');
@@ -25,7 +26,7 @@ const ContactForm = ({onAddContact}) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <div>
         Name
         <input

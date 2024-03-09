@@ -11,8 +11,8 @@ const Navbar = () => {
     const dispatch = useDispatch()
     return (
         <div className={s.wrapper}>
-            <Link className={s.homeLink} to={'/'}>Redux | Auth</Link>
-            <div>{email}</div>
+            <Link className={s.homeLink} to={'/'}>Phonebook</Link>
+            <div> {email}</div>
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/contacts'>Contacts</NavLink>
@@ -22,7 +22,7 @@ const Navbar = () => {
                         <NavLink to='/login'>Login</NavLink>
                     </>
                 )}
-                {isLoggedIn && <button onClick={() => dispatch(logoutThunk())}>Exit</button>}
+                {isLoggedIn && <button className={s.exitButton} onClick={() => dispatch(logoutThunk())}>Exit</button>}
 
             </nav>
         </div>

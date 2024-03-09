@@ -7,7 +7,6 @@
     background-color: rgb(63, 113, 184);
     font-size: 1.2rem;
     font-weight: bold;
-    font-style: italic;
     align-items: center;
 
     nav {
@@ -28,3 +27,17 @@
     font-size: 1.8rem;
     text-decoration: none;
 }
+
+.exitButton {
+    
+            color: white;
+            background-color: rgb(215, 8, 8);
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .3s ease;
+    
+            &:hover {
+                background-color: rgb(230, 102, 119);
+            }
+        }

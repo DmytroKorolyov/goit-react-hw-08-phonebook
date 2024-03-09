@@ -7,6 +7,7 @@ import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList'
 import { addContactThunk, fetchContactsThunk } from '../redux/operation';
+import s from './ContactsMain.module.css'
 
 const ContactsMain = () => {
   const contacts = useSelector(selectContacts);
@@ -46,10 +47,10 @@ const filteredContacts = filter
 
   return (
     <div>
-      <h1>Phonebook</h1>
+      <h1 className={s.mainTitle}>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
 
-      <h2>Contacts</h2>
+      <h2 className={s.mainTitle}>Contacts</h2>
       <Filter value={filter} onChange={handleSearchChange} />
       <ContactList contacts={filteredContacts} />
     </div>

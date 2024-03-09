@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import ContactsMain from "./components/ContactsMain";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound/NotFound";
 import Register from "./pages/Register/Register";
