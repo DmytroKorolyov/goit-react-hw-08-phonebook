@@ -13,6 +13,7 @@ import { refreshThunk } from "./redux/auth/operations";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import { selectIsRefresh } from "./redux/auth/slice";
+import Preloader from "./components/Preloader";
 
 // import { Home, Login, NotFound, Register, Contacts } from './pages'
 
@@ -24,7 +25,7 @@ export const App = () => {
         dispatch(refreshThunk())
     }, [dispatch])
     return isRefresh ? (
-        <h1>Loading</h1>
+        <Preloader />
     ) : (
             <Routes>
                 <Route path="/" element={<Layout />}>
