@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const location = useLocation()
-    console.log(location);
+
     const handleSubmit = data => {
         dispatch(loginThunk(data))
             .unwrap()

@@ -13,7 +13,6 @@ const Form = ({ onDataSubmit, formType, values }) => {
     })
 
     const submit = (data) => {
-        console.log(data)
         onDataSubmit(data)
         reset()
     }
